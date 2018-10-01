@@ -1,6 +1,7 @@
 package tool
 
 import (
+	"fmt"
 	"math/rand"
 	"time"
 )
@@ -26,4 +27,8 @@ func SliceSwap(list []int, i int, j int) {
 	x := list[i]
 	list[i] = list[j]
 	list[j] = x
+}
+
+func PrintSlice(x []int) {
+	fmt.Printf("len=%d cap=%d slice=%v\n", len(x), cap(x), x)
 }

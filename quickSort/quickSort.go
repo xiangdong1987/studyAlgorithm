@@ -9,18 +9,16 @@ func OriginalQuickSort() {
 	arrList := []int{1, 2, 3, 4, 5, 6, 8, 9, 343, 3}
 	standardQuickSort(arrList, 0, len(arrList))
 	fmt.Println("OriginalQuickSort:")
-	printSlice(arrList)
+	tool.PrintSlice(arrList)
 
 }
 func OptimizationQuickSort() {
 	arrList := []int{1, 2, 3, 4, 5, 6, 8, 9, 343, 3}
 	randQuickSort(arrList, 0, len(arrList))
 	fmt.Println("OptimizationQuickSort:")
-	printSlice(arrList)
+	tool.PrintSlice(arrList)
 }
-func printSlice(x []int) {
-	fmt.Printf("len=%d cap=%d slice=%v\n", len(x), cap(x), x)
-}
+
 func standardQuickSort(list []int, left int, right int) {
 	if left >= right {
 		return
@@ -36,7 +34,7 @@ func standardQuickSort(list []int, left int, right int) {
 			tool.SliceSwap(list, newLeft-1, i)
 		}
 	}
-	printSlice(list)
+	tool.PrintSlice(list)
 	//判断已经是最小值了
 	if newLeft == oldLeft {
 		standardQuickSort(list, oldLeft+1, oldRight)
@@ -69,7 +67,7 @@ func randQuickSort(list []int, left int, right int) {
 			}
 		}
 	}
-	printSlice(list)
+	tool.PrintSlice(list)
 	//判断已经是最小值了
 	if newLeft == oldLeft {
 		randQuickSort(list, oldLeft+1, oldRight)

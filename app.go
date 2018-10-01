@@ -1,6 +1,7 @@
 package main
 
 import (
+	"./insertSort"
 	"./quickSort"
 )
 
@@ -9,4 +10,6 @@ func main() {
 	Qs.OriginalQuickSort()
 	//优化快排
 	Qs.OptimizationQuickSort()
+	//插入算法
+	IS.InsertSort()
 }

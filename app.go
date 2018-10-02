@@ -1,6 +1,8 @@
 package main
 
-import "./selectSort"
+import (
+	"./bubbleSort"
+)
 
 func main() {
 	//原始快排
@@ -9,5 +11,6 @@ func main() {
 	//Qs.OptimizationQuickSort()
 	//插入算法
 	//IS.InsertSort()
-	SS.SelectSort()
+	//SS.SelectSort()
+	BS.BubbleSort()
 }

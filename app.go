@@ -1,8 +1,6 @@
 package main
 
-import (
-	"./insertSort"
-)
+import "./selectSort"
 
 func main() {
 	//原始快排
@@ -10,5 +8,6 @@ func main() {
 	//优化快排
 	//Qs.OptimizationQuickSort()
 	//插入算法
-	IS.InsertSort()
+	//IS.InsertSort()
+	SS.SelectSort()
 }

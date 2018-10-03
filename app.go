@@ -1,7 +1,7 @@
 package main
 
 import (
-	"./bubbleSort"
+	"./mergeSort"
 )
 
 func main() {
@@ -12,5 +12,6 @@ func main() {
 	//插入算法
 	//IS.InsertSort()
 	//SS.SelectSort()
-	BS.BubbleSort()
+	//BS.BubbleSort()
+	MS.MergeSort()
 }

@@ -7,4 +7,6 @@
 * [插入排序](https://github.com/xiangdong1987/studyAlgorithm/tree/master/insertSort "快速排序")
 * [选择排序](https://github.com/xiangdong1987/studyAlgorithm/tree/master/selectSort "选择排序")
 * [快速排序](https://github.com/xiangdong1987/studyAlgorithm/tree/master/quickSort "快速排序")
+* [堆排序](https://github.com/xiangdong1987/studyAlgorithm/tree/master/heapkSort "堆排序")
+* [归并排序](https://github.com/xiangdong1987/studyAlgorithm/tree/master/mergeSort "归并排序")
 * 归并排序

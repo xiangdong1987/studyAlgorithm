@@ -1,7 +1,7 @@
 package main
 
 import (
-	"./mergeSort"
+	"./heapSort"
 )
 
 func main() {
@@ -13,5 +13,6 @@ func main() {
 	//IS.InsertSort()
 	//SS.SelectSort()
 	//BS.BubbleSort()
-	MS.MergeSort()
+	//MS.MergeSort()
+	HS.HeapSort()
 }

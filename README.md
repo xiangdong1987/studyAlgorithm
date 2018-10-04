@@ -9,4 +9,5 @@
 * [快速排序](https://github.com/xiangdong1987/studyAlgorithm/tree/master/quickSort "快速排序")
 * [堆排序](https://github.com/xiangdong1987/studyAlgorithm/tree/master/heapkSort "堆排序")
 * [归并排序](https://github.com/xiangdong1987/studyAlgorithm/tree/master/mergeSort "归并排序")
+* [计数排序](https://github.com/xiangdong1987/studyAlgorithm/tree/master/countSort "计数排序")
 * 归并排序

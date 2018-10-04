@@ -1,7 +1,7 @@
 package main
 
 import (
-	"./heapSort"
+	"./countSort"
 )
 
 func main() {
@@ -14,5 +14,6 @@ func main() {
 	//SS.SelectSort()
 	//BS.BubbleSort()
 	//MS.MergeSort()
-	HS.HeapSort()
+	//HS.HeapSort()
+	CS.CountSort()
 }

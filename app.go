@@ -1,7 +1,7 @@
 package main
 
 import (
-	"./countSort"
+	"./radixSort"
 )
 
 func main() {
@@ -15,5 +15,6 @@ func main() {
 	//BS.BubbleSort()
 	//MS.MergeSort()
 	//HS.HeapSort()
-	CS.CountSort()
+	//CS.CountSort()
+	RS.RadixSort()
 }

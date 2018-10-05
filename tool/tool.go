@@ -32,3 +32,13 @@ func SliceSwap(list []int, i int, j int) {
 func PrintSlice(x []int) {
 	fmt.Printf("len=%d cap=%d slice=%v\n", len(x), cap(x), x)
 }
+
+func Power(x int, n int) int {
+	ans := 1
+
+	for n != 0 {
+		ans *= x
+		n--
+	}
+	return ans
+}

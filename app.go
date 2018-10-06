@@ -1,7 +1,7 @@
 package main
 
 import (
-	"./radixSort"
+	"./tree"
 )
 
 func main() {
@@ -16,5 +16,6 @@ func main() {
 	//MS.MergeSort()
 	//HS.HeapSort()
 	//CS.CountSort()
-	RS.RadixSort()
+	//RS.RadixSort()
+	tree.Test()
 }

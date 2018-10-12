@@ -1,7 +1,7 @@
 package main
 
 import (
-	"./tree"
+	"./dataStructure/linkedList"
 )
 
 func main() {
@@ -17,5 +17,6 @@ func main() {
 	//HS.HeapSort()
 	//CS.CountSort()
 	//RS.RadixSort()
-	tree.Test()
+	//tree.Test()
+	linkedList.CreatLinkedList()
 }

@@ -19,6 +19,7 @@ type Tree struct {
 func Test() {
 	creatTree()
 }
+
 func creatTree() {
 	arrList := []int{14, 2, 5, 7, 23, 35, 12, 17, 31}
 	myTree := Tree{}
@@ -29,6 +30,8 @@ func creatTree() {
 	fmt.Println(myTree)
 	LDR(myTree)
 }
+
+//中序遍历
 func LDR(tree Tree) {
 	readList := make(map[int]int)
 	i := 0

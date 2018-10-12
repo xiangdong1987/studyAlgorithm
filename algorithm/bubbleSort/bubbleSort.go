@@ -1,7 +1,7 @@
 package BS
 
 import (
-	"../tool"
+	"../../tool"
 	"fmt"
 )
 

@@ -1,7 +1,7 @@
 package HS
 
 import (
-	"../tool"
+	"../../tool"
 	"fmt"
 )
 

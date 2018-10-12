@@ -1,7 +1,7 @@
 package RS
 
 import (
-	"../tool"
+	"../../tool"
 	"fmt"
 )
 

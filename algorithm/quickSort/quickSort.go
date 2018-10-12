@@ -3,7 +3,7 @@ package Qs
 import (
 	"fmt"
 )
-import "../tool"
+import "../../tool"
 
 func OriginalQuickSort() {
 	arrList := []int{1, 2, 3, 4, 5, 6, 8, 9, 343, 3}

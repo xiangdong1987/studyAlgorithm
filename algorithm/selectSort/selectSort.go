@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 import (
-	"../tool"
+	"../../tool"
 )
 
 func SelectSort() {

@@ -1,7 +1,7 @@
 package MS
 
 import (
-	"../tool"
+	"../../tool"
 	"fmt"
 )
 

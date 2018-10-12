@@ -1,8 +1,8 @@
 package CS
 
 import (
+	"../../tool"
 	"../bubbleSort"
-	"../tool"
 	"fmt"
 )
 

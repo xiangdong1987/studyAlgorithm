@@ -1,7 +1,7 @@
 package IS
 
 import "fmt"
-import "../tool"
+import "../../tool"
 
 func InsertSort() {
 	arrList := []int{1, 2, 8, 11, 3, 6, 8, 4, 9, 343, 3}

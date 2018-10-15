@@ -76,3 +76,29 @@ func randQuickSort(list []int, left int, right int) {
 		randQuickSort(list, newLeft, oldRight)
 	}
 }
+func RecursiveQuickSort() {
+	arrList := []int{1, 2, 6, 8, 9, 3, 4, 5, 343}
+	arrList = divisionData(arrList)
+	fmt.Println("OptimizationQuickSort:")
+	tool.PrintSlice(arrList)
+}
+
+func divisionData(list []int) []int {
+	if len(list) <= 1 {
+		return list
+	}
+	var left []int
+	var right []int
+	mid := list[0]
+	for i := 1; i < len(list); i++ {
+		if list[i] <= mid {
+			left = append(left, list[i])
+		} else {
+			right = append(right, list[i])
+		}
+	}
+	left = append(left, mid)
+	left = divisionData(left)
+	right = divisionData(right)
+	return append(left, right...)
+}

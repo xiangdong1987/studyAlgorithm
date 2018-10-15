@@ -36,7 +36,7 @@
 * 动态规划
 * 字符串匹配算法
 ## 目录
-### 算法
+### 排序算法
 * [冒泡排序](https://github.com/xiangdong1987/studyAlgorithm/tree/master/algorithm/bubbleSort "快速排序")
 * [插入排序](https://github.com/xiangdong1987/studyAlgorithm/tree/master/algorithm/insertSort "快速排序")
 * [选择排序](https://github.com/xiangdong1987/studyAlgorithm/tree/master/algorithm/selectSort "选择排序")

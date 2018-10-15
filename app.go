@@ -1,14 +1,12 @@
 package main
 
-import (
-	"./dataStructure/linkedList"
-)
+import "./algorithm/quickSort"
 
 func main() {
 	//原始快排
 	//Qs.OriginalQuickSort()
 	//优化快排
-	//Qs.OptimizationQuickSort()
+	Qs.RecursiveQuickSort()
 	//插入算法
 	//IS.InsertSort()
 	//SS.SelectSort()
@@ -18,5 +16,5 @@ func main() {
 	//CS.CountSort()
 	//RS.RadixSort()
 	//tree.Test()
-	linkedList.CreatLinkedList()
+	//linkedList.CreatLinkedList()
 }

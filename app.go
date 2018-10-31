@@ -1,12 +1,12 @@
 package main
 
-import "./algorithm/quickSort"
+import "./algorithm/binarySearch"
 
 func main() {
 	//原始快排
 	//Qs.OriginalQuickSort()
 	//优化快排
-	Qs.RecursiveQuickSort()
+	binarySearch.BinarySearch()
 	//插入算法
 	//IS.InsertSort()
 	//SS.SelectSort()

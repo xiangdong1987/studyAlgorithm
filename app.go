@@ -1,12 +1,13 @@
 package main
 
-import "./algorithm/binarySearch"
+import "./dataStructure/skipList"
 
 func main() {
 	//原始快排
 	//Qs.OriginalQuickSort()
 	//优化快排
-	binarySearch.BinarySearch()
+	//binarySearch.BinarySearch()
+	skipList.InitSkipList()
 	//插入算法
 	//IS.InsertSort()
 	//SS.SelectSort()

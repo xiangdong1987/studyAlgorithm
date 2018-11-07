@@ -1,13 +1,13 @@
 package main
 
-import "./dataStructure/skipList"
+import "./dataStructure/hash"
 
 func main() {
 	//原始快排
 	//Qs.OriginalQuickSort()
 	//优化快排
 	//binarySearch.BinarySearch()
-	skipList.InitSkipList()
+	hash.NolinkHashTable(5)
 	//插入算法
 	//IS.InsertSort()
 	//SS.SelectSort()

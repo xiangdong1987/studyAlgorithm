@@ -1,13 +1,15 @@
 package main
 
-import "./dataStructure/hash"
+import (
+	"./dataStructure/tree"
+)
 
 func main() {
 	//原始快排
 	//Qs.OriginalQuickSort()
 	//优化快排
-	//binarySearch.BinarySearch()
-	hash.NolinkHashTable(5)
+	tree.Test()
+	//hash.NolinkHashTable(5)
 	//插入算法
 	//IS.InsertSort()
 	//SS.SelectSort()

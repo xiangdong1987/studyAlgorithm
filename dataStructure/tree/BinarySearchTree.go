@@ -2,6 +2,7 @@ package tree
 
 import (
 	"fmt"
+	"math"
 )
 
 type Node struct {
@@ -28,7 +29,38 @@ func creatTree() {
 		myTree.length++
 	}
 	fmt.Println(myTree)
-	LDR(myTree)
+	//LDR(myTree)
+	TreeHeight(myTree)
+}
+func TreeHeight(tree Tree) {
+	var hl = 1
+	if tree.root.left != nil {
+		hl = heightMax(tree.root.left, hl)
+	}
+	var hr = 1
+	if tree.root.right != nil {
+		hr = heightMax(tree.root.left, hr)
+	}
+	fmt.Println(hl, hr)
+	fmt.Println("Tree height is ", int(math.Max(float64(hl), float64(hr))))
+}
+
+func heightMax(node *Node, h int) int {
+	var hL = h
+	var hR = h
+	if node.left == nil && node.right == nil {
+		fmt.Println(node)
+		return h
+	}
+	if node.left != nil {
+		h++
+		hL = heightMax(node.left, h)
+	}
+	if node.right != nil {
+		h++
+		hR = heightMax(node.right, h)
+	}
+	return int(math.Max(float64(hL), float64(hR)))
 }
 
 //中序遍历

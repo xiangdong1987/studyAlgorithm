@@ -1,14 +1,15 @@
 package main
 
 import (
-	"./dataStructure/tree"
+	"./dataStructure/heap"
 )
 
 func main() {
 	//原始快排
 	//Qs.OriginalQuickSort()
 	//优化快排
-	tree.Test()
+	//tree.Test()
+	heap.CreateHeap()
 	//hash.NolinkHashTable(5)
 	//插入算法
 	//IS.InsertSort()

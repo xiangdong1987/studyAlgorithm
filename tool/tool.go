@@ -28,7 +28,6 @@ func SliceSwap(list []int, i int, j int) {
 	list[i] = list[j]
 	list[j] = x
 }
-
 func PrintSlice(x []int) {
 	fmt.Printf("len=%d cap=%d slice=%v\n", len(x), cap(x), x)
 }

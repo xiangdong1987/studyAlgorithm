@@ -1,8 +1,8 @@
 package BS
 
 import (
-	"../../tool"
 	"fmt"
+	"studyAlgorithm/tool"
 )
 
 func BubbleSort() {
@@ -14,7 +14,7 @@ func BubbleSort() {
 func StandardBubbleSort(list []int) {
 	i := len(list)
 	for i > 0 {
-		for j := 0; j < len(list)-1; j++ {
+		for j := 0; j < i-1; j++ {
 			if list[j] > list[j+1] {
 				tool.SliceSwap(list, j, j+1)
 			}

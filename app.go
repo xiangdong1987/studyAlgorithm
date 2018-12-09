@@ -1,7 +1,7 @@
 package main
 
 import (
-	"./dataStructure/heap"
+	"studyAlgorithm/algorithm/bubbleSort"
 )
 
 func main() {
@@ -9,7 +9,8 @@ func main() {
 	//Qs.OriginalQuickSort()
 	//优化快排
 	//tree.Test()
-	heap.CreateHeap()
+	//heap.CreateHeap()
+	BS.BubbleSort()
 	//hash.NolinkHashTable(5)
 	//插入算法
 	//IS.InsertSort()

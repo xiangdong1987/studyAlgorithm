@@ -1,8 +1,6 @@
 package main
 
-import (
-	"studyAlgorithm/algorithm/bubbleSort"
-)
+import "studyAlgorithm/dataStructure/graph"
 
 func main() {
 	//原始快排
@@ -10,7 +8,8 @@ func main() {
 	//优化快排
 	//tree.Test()
 	//heap.CreateHeap()
-	BS.BubbleSort()
+	//BS.BubbleSort()
+	graph.TestGraph()
 	//hash.NolinkHashTable(5)
 	//插入算法
 	//IS.InsertSort()

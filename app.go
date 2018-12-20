@@ -1,6 +1,6 @@
 package main
 
-import "studyAlgorithm/dataStructure/graph"
+import "studyAlgorithm/algorithm/stringMatch"
 
 func main() {
 	//原始快排
@@ -9,7 +9,8 @@ func main() {
 	//tree.Test()
 	//heap.CreateHeap()
 	//BS.BubbleSort()
-	graph.TestGraph()
+	//graph.TestGraph()
+	stringMatch.TestKmp()
 	//hash.NolinkHashTable(5)
 	//插入算法
 	//IS.InsertSort()

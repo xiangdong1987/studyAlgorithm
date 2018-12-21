@@ -1,6 +1,6 @@
 package main
 
-import "studyAlgorithm/algorithm/stringMatch"
+import "studyAlgorithm/dataStructure/trieTree"
 
 func main() {
 	//原始快排
@@ -10,7 +10,8 @@ func main() {
 	//heap.CreateHeap()
 	//BS.BubbleSort()
 	//graph.TestGraph()
-	stringMatch.TestKmp()
+	//stringMatch.TestKmp()
+	trieTree.TestTrieTree()
 	//hash.NolinkHashTable(5)
 	//插入算法
 	//IS.InsertSort()

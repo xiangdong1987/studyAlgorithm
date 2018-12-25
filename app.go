@@ -1,6 +1,6 @@
 package main
 
-import "studyAlgorithm/dataStructure/trieTree"
+import "studyAlgorithm/dataStructure/aho"
 
 func main() {
 	//原始快排
@@ -11,7 +11,8 @@ func main() {
 	//BS.BubbleSort()
 	//graph.TestGraph()
 	//stringMatch.TestKmp()
-	trieTree.TestTrieTree()
+	//trieTree.TestTrieTree()
+	aho.TestAcTrie()
 	//hash.NolinkHashTable(5)
 	//插入算法
 	//IS.InsertSort()

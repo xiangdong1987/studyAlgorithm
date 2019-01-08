@@ -1,6 +1,6 @@
 package main
 
-import "studyAlgorithm/dataStructure/aho"
+import "studyAlgorithm/algorithm/baseMind"
 
 func main() {
 	//原始快排
@@ -12,7 +12,7 @@ func main() {
 	//graph.TestGraph()
 	//stringMatch.TestKmp()
 	//trieTree.TestTrieTree()
-	aho.TestAcTrie()
+	//aho.TestAcTrie()
 	//hash.NolinkHashTable(5)
 	//插入算法
 	//IS.InsertSort()
@@ -24,4 +24,8 @@ func main() {
 	//RS.RadixSort()
 	//tree.Test()
 	//linkedList.CreatLinkedList()
+	//baseMind.CountReversed()
+	//baseMind.TestQueen()
+	//baseMind.TestOneZero()
+	baseMind.TestDynOneZero()
 }

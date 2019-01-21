@@ -1,6 +1,6 @@
 package main
 
-import "studyAlgorithm/algorithm/baseMind"
+import "studyAlgorithm/algorithm/topologicalSort"
 
 func main() {
 	//原始快排
@@ -27,5 +27,6 @@ func main() {
 	//baseMind.CountReversed()
 	//baseMind.TestQueen()
 	//baseMind.TestOneZero()
-	baseMind.TestDynOneZero()
+	//baseMind.TestDynOneZero()
+	topologicalSort.TestKhanSort()
 }

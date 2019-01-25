@@ -23,7 +23,7 @@ func TestKhanSort() {
 	g.addVertex(4, 2)
 	g.addVertex(5, 2)
 	g.addVertex(8, 7)
-	g.KhanSort()
+	g.DfsSort()
 }
 
 //创建图
@@ -58,7 +58,6 @@ func push(list []int, value int) []int {
 
 //添加边
 func (g *graph) KhanSort() {
-
 	var inDegree = make(map[int]int)
 	var queue []int
 	for i := 1; i <= g.vertex; i++ {
@@ -83,4 +82,35 @@ func (g *graph) KhanSort() {
 			}
 		}
 	}
+}
+
+func (g *graph) DfsSort() {
+	inverseList := make(map[int][]int)
+	//初始化逆向邻接表
+	for i := 1; i <= g.vertex; i++ {
+		for _, k := range g.list[i] {
+			inverseList[k] = append(inverseList[k], i)
+		}
+	}
+	visited := make([]bool, g.vertex+1)
+	visited[0] = true
+	for i := 1; i <= g.vertex; i++ {
+		if visited[i] == false {
+			visited[i] = true
+			dfs(i, inverseList, visited)
+		}
+	}
+
+}
+
+func dfs(vertex int, inverseList map[int][]int, visited []bool) {
+	for _, w := range inverseList[vertex] {
+		if visited[w] == true {
+			continue
+		} else {
+			visited[w] = true
+			dfs(w, inverseList, visited)
+		}
+	}
+	fmt.Println("->", vertex)
 }

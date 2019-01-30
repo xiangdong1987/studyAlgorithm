@@ -1,6 +1,6 @@
 package main
 
-import "studyAlgorithm/algorithm/topologicalSort"
+import "studyAlgorithm/algorithm/shortestPath"
 
 func main() {
 	//原始快排
@@ -28,5 +28,7 @@ func main() {
 	//baseMind.TestQueen()
 	//baseMind.TestOneZero()
 	//baseMind.TestDynOneZero()
-	topologicalSort.TestKhanSort()
+	//topologicalSort.TestKhanSort()
+
+	shortestPath.TestShortestPath()
 }

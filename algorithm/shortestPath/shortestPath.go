@@ -5,6 +5,21 @@ import "fmt"
 const MaxUint = ^uint(0)
 const MaxInt = int(MaxUint >> 1)
 
+func TestShortestPath() {
+	g := Graph{}
+	g.Vertex = 6
+	g.Adj = make(map[int][]Edge, 6)
+	g.addEdge(0, 1, 10)
+	g.addEdge(0, 4, 15)
+	g.addEdge(1, 2, 15)
+	g.addEdge(1, 3, 2)
+	g.addEdge(3, 2, 1)
+	g.addEdge(3, 5, 12)
+	g.addEdge(2, 5, 5)
+	g.addEdge(4, 5, 10)
+	g.Dijkstra(0, 5)
+}
+
 type Edge struct {
 	Sid    int
 	Tid    int
@@ -13,12 +28,12 @@ type Edge struct {
 
 type Graph struct {
 	Adj    map[int][]Edge
-	vertex int
+	Vertex int
 }
 
-func (e *Graph) addEdge(s int, t int, w int) {
+func (g *Graph) addEdge(s int, t int, w int) {
 	edge := Edge{s, t, w}
-	e.Adj[s] = append(e.Adj[s], edge)
+	g.Adj[s] = append(g.Adj[s], edge)
 }
 
 type Vertex struct {
@@ -39,55 +54,23 @@ func (h *PriorityQueue) InsertHeap(one Vertex) {
 	h.AdjustHeap(h.count)
 }
 
-//堆排序
-func (h *PriorityQueue) SortHeap(heaps []Vertex) {
-	length := len(heaps)
-	length = length - 1
-	if length == 1 {
-		return
-	}
-	if length == 2 {
-		h.AdjustHeap(length - 1)
-	}
-	for length > 0 {
-		h.SliceNodeSwap(1, length)
-		length--
-		h.Heapfiy(length, 1)
-	}
-	//反序
-	minPos := 1
-	maxPos := h.count
-	for minPos < maxPos {
-		h.SliceNodeSwap(minPos, maxPos)
-		minPos++
-		maxPos--
-	}
-}
-
-//自下而上调整
+//自下而上调整 (小顶堆)
 func (h *PriorityQueue) AdjustHeap(length int) {
 	if length < 1 {
 		return
 	}
 	if length == 2 {
-		if h.nodes[length].Dist > h.nodes[length-1].Dist {
+		if h.nodes[length].Dist < h.nodes[length-1].Dist {
 			h.SliceNodeSwap(length, length-1)
 		}
 		return
 	}
 	i := length
-	for i/2 > 0 && h.nodes[i].Dist > h.nodes[i/2].Dist {
+	for i/2 > 0 && h.nodes[i].Dist < h.nodes[i/2].Dist {
 		h.SliceNodeSwap(i, i/2)
 		i = i / 2
 	}
 	return
-}
-
-//输出heap
-func heapShow(heaps []Vertex) {
-	for one, value := range heaps {
-		fmt.Println(one, value)
-	}
 }
 
 //node slice交换
@@ -124,28 +107,28 @@ func (h *PriorityQueue) GetTopHeap() Vertex {
 	//堆顶和堆底交换
 	h.SliceNodeSwap(1, len(h.nodes)-1)
 	length := len(h.nodes) - 2
-	fmt.Println(length)
 	h.Heapfiy(length, 1)
-	heapShow(h.nodes)
 	h.nodes = append(h.nodes[:length+1], h.nodes[length+2:]...)
 	h.count--
 	return top
 }
 
 func (g *Graph) Dijkstra(s int, t int) {
-	predecessor := make([]int, g.vertex)
-	vertexes := make([]Vertex, g.vertex)
-	for i := 0; i < g.vertex; i++ {
+	predecessor := make([]int, g.Vertex)
+	vertexes := make([]Vertex, g.Vertex)
+	for i := 0; i < g.Vertex; i++ {
 		vertexes[i] = Vertex{i, MaxInt}
 	}
 	queue := PriorityQueue{}
-	queue.count = g.vertex
-	inqueue := make([]bool, g.vertex)
+	queue.nodes = append(queue.nodes, Vertex{})
+	inqueue := make([]bool, g.Vertex)
 	vertexes[s].Dist = 0
 	queue.InsertHeap(vertexes[s])
 	inqueue[s] = true
 	for len(queue.nodes) > 0 {
+		fmt.Println(queue)
 		minVertex := queue.GetTopHeap()
+		fmt.Println(g.Adj[minVertex.Id])
 		if minVertex.Id == t {
 			break
 		}
@@ -156,7 +139,8 @@ func (g *Graph) Dijkstra(s int, t int) {
 				nextVertex.Dist = minVertex.Dist + e.Weight
 				predecessor[nextVertex.Id] = minVertex.Id
 				if inqueue[nextVertex.Id] == true {
-					queue.Heapfiy(len(queue.nodes), 1)
+					queue.InsertHeap(nextVertex)
+					queue.AdjustHeap(queue.count)
 				} else {
 					queue.InsertHeap(nextVertex)
 					inqueue[nextVertex.Id] = true
@@ -164,8 +148,10 @@ func (g *Graph) Dijkstra(s int, t int) {
 			}
 		}
 	}
+	println("->", s)
 	g.printPath(s, t, predecessor)
 }
+
 func (g *Graph) printPath(s int, t int, predecessor []int) {
 	if s == t {
 		return

@@ -1,6 +1,6 @@
 package main
 
-import "studyAlgorithm/algorithm/shortestPath"
+import "studyAlgorithm/problem"
 
 func main() {
 	//原始快排
@@ -30,5 +30,6 @@ func main() {
 	//baseMind.TestDynOneZero()
 	//topologicalSort.TestKhanSort()
 
-	shortestPath.TestShortestPath()
+	//shortestPath.TestShortestPath()
+	problem.NumberOfBoomerangs()
 }

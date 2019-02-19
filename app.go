@@ -31,5 +31,5 @@ func main() {
 	//topologicalSort.TestKhanSort()
 
 	//shortestPath.TestShortestPath()
-	problem.NumberOfBoomerangs()
+	problem.TestProblem()
 }

@@ -1,74 +1,121 @@
 package problem
 
-func solve(board [][]byte) {
-	for i, a := range board {
-		if i == 0 {
-			continue
-		}
-		if i == len(a)-1 {
-			continue
-		}
-		for j, b := range a {
-			if j == 0 {
-				continue
-			}
-			if j == len(a)-1 {
-				continue
-			}
-			if b == 'X' {
-				continue
-			} else {
-				//获取所有相连的O
-				var queue [][]int
-				findO(i, j, board, queue)
-			}
-		}
-	}
+import "fmt"
+
+/**
+board[0] = append(board[0], byte('X'))
+board[0] = append(board[0], byte('X'))
+board[0] = append(board[0], byte('X'))
+board[0] = append(board[0], byte('X'))
+board[1] = append(board[1], byte('X'))
+board[1] = append(board[1], byte('O'))
+board[1] = append(board[1], byte('O'))
+board[1] = append(board[1], byte('X'))
+board[2] = append(board[2], byte('X'))
+board[2] = append(board[2], byte('X'))
+board[2] = append(board[2], byte('O'))
+board[2] = append(board[2], byte('X'))
+board[3] = append(board[3], byte('X'))
+board[3] = append(board[3], byte('O'))
+board[3] = append(board[3], byte('X'))
+board[3] = append(board[3], byte('X'))
+
+board[0] = append(board[0], byte('O'))
+board[0] = append(board[0], byte('O'))
+board[0] = append(board[0], byte('O'))
+board[1] = append(board[1], byte('O'))
+board[1] = append(board[1], byte('O'))
+board[1] = append(board[1], byte('O'))
+board[2] = append(board[2], byte('O'))
+board[2] = append(board[2], byte('O'))
+board[2] = append(board[2], byte('O'))
+
+board[0] = append(board[0], byte('O'))
+board[0] = append(board[0], byte('X'))
+board[0] = append(board[0], byte('X'))
+board[0] = append(board[0], byte('O'))
+board[0] = append(board[0], byte('X'))
+board[1] = append(board[1], byte('X'))
+board[1] = append(board[1], byte('O'))
+board[1] = append(board[1], byte('O'))
+board[1] = append(board[1], byte('X'))
+board[1] = append(board[1], byte('O'))
+board[2] = append(board[2], byte('X'))
+board[2] = append(board[2], byte('O'))
+board[2] = append(board[2], byte('X'))
+board[2] = append(board[2], byte('O'))
+board[2] = append(board[2], byte('X'))
+board[3] = append(board[3], byte('O'))
+board[3] = append(board[3], byte('X'))
+board[3] = append(board[3], byte('O'))
+board[3] = append(board[3], byte('O'))
+board[3] = append(board[3], byte('O'))
+board[4] = append(board[4], byte('X'))
+board[4] = append(board[4], byte('X'))
+board[4] = append(board[4], byte('O'))
+board[4] = append(board[4], byte('X'))
+board[4] = append(board[4], byte('O'))
+
+
+*/
+func TestProblem() {
+	length := 4
+	board := make([][]byte, length)
+	board[0] = append(board[0], byte('X'))
+	board[0] = append(board[0], byte('X'))
+	board[0] = append(board[0], byte('X'))
+	board[0] = append(board[0], byte('X'))
+	board[1] = append(board[1], byte('X'))
+	board[1] = append(board[1], byte('O'))
+	board[1] = append(board[1], byte('O'))
+	board[1] = append(board[1], byte('X'))
+	board[2] = append(board[2], byte('X'))
+	board[2] = append(board[2], byte('X'))
+	board[2] = append(board[2], byte('O'))
+	board[2] = append(board[2], byte('X'))
+	board[3] = append(board[3], byte('X'))
+	board[3] = append(board[3], byte('O'))
+	board[3] = append(board[3], byte('X'))
+	board[3] = append(board[3], byte('X'))
+	solve(board)
+	fmt.Println(board)
 }
 
-func findO(i int, j int, board [][]byte, queue [][]int) {
-	//向上找
-	for i > 0 {
-		i--
-		if board[i][j] == 'O' {
-			queue[i][j] = 1
-			findO(i, j, board, queue)
-			continue
-		} else {
-			break
+func solve(board [][]byte) {
+	lengthA := len(board)
+	for i, a := range board {
+		lengthB := len(a)
+		for j, b := range a {
+			if (i == 0 || i == lengthA-1 || j == 0 || j == lengthB-1) && b == 'O' {
+				findO(i, j, board, lengthA, lengthB)
+			}
 		}
 	}
-	//向左找
-	for j > 0 {
-		j--
-		if board[i][j] == 'O' {
-			queue[i][j] = 1
-			findO(i, j, board, queue)
-			continue
-		} else {
-			break
+	fmt.Println(board)
+	//将O变成X
+	for i, a := range board {
+		for j, b := range a {
+			if b == 'O' {
+				board[i][j] = 'X'
+			} else if b == '-' {
+				board[i][j] = 'O'
+			}
 		}
 	}
-	//向下找
-	for i < len(board[i]) {
-		i++
+	fmt.Println(board)
+}
+func findO(i int, j int, board [][]byte, lengthA int, lengthB int) {
+	if i >= 0 && i < lengthA && j >= 0 && j < lengthB {
 		if board[i][j] == 'O' {
-			queue[i][j] = 1
-			findO(i, j, board, queue)
-			continue
+			board[i][j] = '-'
+			findO(i-1, j, board, lengthA, lengthB)
+			findO(i+1, j, board, lengthA, lengthB)
+			findO(i, j-1, board, lengthA, lengthB)
+			findO(i, j+1, board, lengthA, lengthB)
 		} else {
-			break
+			return
 		}
-	}
-	//向右找
-	for j < len(board[i]) {
-		j++
-		if board[i][j] == 'O' {
-			queue[i][j] = 1
-			findO(i, j, board, queue)
-			continue
-		} else {
-			break
-		}
+	} else {
+		return
 	}
 }

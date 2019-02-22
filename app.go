@@ -31,5 +31,6 @@ func main() {
 	//topologicalSort.TestKhanSort()
 
 	//shortestPath.TestShortestPath()
-	problem.TestProblem()
+	//problem.TestProblem()
+	problem.TestLeastOpsExpressTarget()
 }

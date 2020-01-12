@@ -5,6 +5,9 @@ import (
 	"testing"
 )
 
+/**
+*回文数
+ */
 func isPalindrome(x int) bool {
 	list := make([]int, 0)
 

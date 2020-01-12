@@ -5,6 +5,9 @@ import (
 	"testing"
 )
 
+/**
+z字形转换
+*/
 func convert(s string, numRows int) string {
 	current := 0
 	result := make([]uint8, len(s))
